@@ -18,7 +18,7 @@ import {
       <>
         <div
           className={
-            "px-4 py-2 dark:bg-cardColor border border-black dark:border-white rounded-lg " +
+            "px-4 py-2 dark:bg-cardColor border border-black rounded-lg " +
             hoverStyles
           }
         >

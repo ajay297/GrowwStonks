@@ -17,7 +17,7 @@
               <div>Current Price : ${current}</div>
               <BiSolidDownArrow />
             </div>
-            <hr className="border border-black w-full rounded-xl h-1 bg-black dark:border-white dark:bg-white" />
+            <hr className="border border-black w-full rounded-xl h-1 bg-black" />
           </div>
           <div className="text-right">
             <div>52-Week High</div>

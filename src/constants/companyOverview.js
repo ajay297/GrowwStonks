@@ -1,4 +1,4 @@
-export const FNVTW= {
+const FNVTW= {
     "Symbol": "FNVTW",
     "AssetType": "Common Stock",
     "Name": "Finnovate Acquisition Corp. Warrants",
@@ -46,3 +46,5 @@ export const FNVTW= {
     "DividendDate": "None",
     "ExDividendDate": "None"
 }
+
+export default FNVTW;

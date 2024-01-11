@@ -1,15 +1,15 @@
-import ProductDescription from "@/components/Product/Description";
+import Description from "@/components/Product/Description";
 import Head from "@/components/Product/Head";
 import Chart from "@/components/Product/Chart";
-import DATA from "@/constants/topGainersLosers";
+import TOP_GAINERS_LOSERS from "@/constants/topGainersLosers";
+import DATA from "@/constants/companyOverview";
 
 
 export default function Page({ params }) {
 
-    const topGainersLosers = [...DATA.top_gainers, ...DATA.top_losers];
+    const topGainersLosers = [...TOP_GAINERS_LOSERS.top_gainers, ...TOP_GAINERS_LOSERS.top_losers];
 
     const data= topGainersLosers.find(company=> company.ticker===params.productSlug);
-    console.log('data', data);
 
   return (
     <>
@@ -24,22 +24,22 @@ export default function Page({ params }) {
           }
         />
 
-        <Chart ticker={params.productSlug} />
+        <Chart ticker={params.productSlug} data={data} />
 
-        {/* <ProductDescription
-          title={data.Name}
-          desc={data.Description}
-          sector={data.Sector}
-          industry={data.Industry}
-          currentPrice={tickerData.price}
-          weekHigh={data["52WeekHigh"]}
-          weekLow={data["52WeekLow"]}
-          dividendYield={data.DividendYield}
-          profitMargin={data.ProfitMargin}
-          beta={data.Beta}
-          peRatio={data.PERatio}
-          marketCap={data.MarketCapitalization}
-        />  */}
+        <Description
+          title={DATA.Name}
+          desc={DATA.Description}
+          sector={DATA.Sector}
+          industry={DATA.Industry}
+          currentPrice={DATA.price}
+          weekHigh={DATA["52WeekHigh"]}
+          weekLow={DATA["52WeekLow"]}
+          dividendYield={DATA.DividendYield}
+          profitMargin={DATA.ProfitMargin}
+          beta={DATA.Beta}
+          peRatio={DATA.PERatio}
+          marketCap={DATA.MarketCapitalization}
+        /> 
       </main>
     </>
   );
