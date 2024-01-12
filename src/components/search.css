@@ -1,0 +1,25 @@
+.search .custom-dropdown__control {
+  background-color: #683b26;
+  border-radius: 9999px;
+}
+
+.search .custom-dropdown__input-container {
+  color: #fff;
+}
+
+.search .custom-dropdown__value-container {
+  padding: 8px 16px;
+  color: #fff;
+}
+
+.search .custom-dropdown__menu {
+  background-color: #683b26;
+  border-radius: 16px;
+  padding: 14px 18px;
+}
+
+.search .custom-dropdown__option {
+  background-color: transparent;
+  color: #fff;
+  border-bottom: 1px solid black;
+}
