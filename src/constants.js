@@ -9,4 +9,13 @@ export const TABS = [
   },
 ];
 
-export const PILLS = {};
+export const PILLS_MAPPER = {
+  All: "All",
+  Stocks: "Equity",
+  ETFs: "ETF",
+};
+
+export const TIMES = {
+  "1D": "1D",
+  "1Y": "1Y",
+};

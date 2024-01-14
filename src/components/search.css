@@ -7,6 +7,10 @@
   color: #fff;
 }
 
+.search .custom-dropdown__single-value {
+  color: #fff;
+}
+
 .search .custom-dropdown__value-container {
   padding: 8px 16px;
   color: #fff;

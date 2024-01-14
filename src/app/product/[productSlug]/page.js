@@ -1,45 +1,53 @@
 import Description from "@/components/Product/Description";
 import Head from "@/components/Product/Head";
 import Chart from "@/components/Product/Chart";
-import TOP_GAINERS_LOSERS from "@/constants/topGainersLosers";
-import DATA from "@/constants/companyOverview";
 
+export default async function Page({ params }) {
+  let response = await fetch(
+    `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${params.productSlug}&apikey=${process.env.ALPHA_VANTAGE_API_KEY}`
+  );
 
-export default function Page({ params }) {
+  const currentData = await response.json();
 
-    const topGainersLosers = [...TOP_GAINERS_LOSERS.top_gainers, ...TOP_GAINERS_LOSERS.top_losers];
+  response = await fetch(
+    `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${params.productSlug}&apikey=${process.env.ALPHA_VANTAGE_API_KEY}`
+  );
+  const companyData = await response.json();
 
-    const data= topGainersLosers.find(company=> company.ticker===params.productSlug);
+  const data = {
+    ...currentData["Global Quote"],
+    ...companyData,
+  };
 
   return (
     <>
       <main className="pb-4">
         <Head
-          name={data.ticker}
-          symbol={data.ticker}
-          currentPrice={data.price}
-          change={data.change_percentage}
+          name={data.Name}
+          symbol={data.Symbol}
+          currentPrice={data["05. price"]}
+          change={data["10. change percent"]}
           profitloss={
-            parseInt(data.change_amount) > 0 ? "increase" : "decrease"
+            parseInt(data["09. change"]) > 0 ? "increase" : "decrease"
           }
         />
 
-        <Chart ticker={params.productSlug} data={data} />
+        <Chart symbol={params.productSlug} data={data} />
 
         <Description
-          title={DATA.Name}
-          desc={DATA.Description}
-          sector={DATA.Sector}
-          industry={DATA.Industry}
-          currentPrice={DATA.price}
-          weekHigh={DATA["52WeekHigh"]}
-          weekLow={DATA["52WeekLow"]}
-          dividendYield={DATA.DividendYield}
-          profitMargin={DATA.ProfitMargin}
-          beta={DATA.Beta}
-          peRatio={DATA.PERatio}
-          marketCap={DATA.MarketCapitalization}
-        /> 
+          title={data.Name}
+          desc={data.Description}
+          sector={data.Sector}
+          industry={data.Industry}
+          currentPrice={data["05. price"]}
+          weekHigh={data["52WeekHigh"]}
+          weekLow={data["52WeekLow"]}
+          dividendYield={data.DividendYield}
+          profitMargin={data.ProfitMargin}
+          beta={data.Beta}
+          peRatio={data.PERatio}
+          marketCap={data.MarketCapitalization}
+        />
       </main>
     </>
   );

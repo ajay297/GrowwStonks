@@ -1,15 +1,11 @@
-  export default function Tags({
-    tagType,
-    tag,
-  }) {
-    return (
-      <>
-        <div className="p-2 m-2 text-white bg-orange-400 border border-black dark:border-white rounded-3xl font-bold">
-          <div className=" flex flex-wrap capitalize">
-            {tagType}: {tag}
-          </div>
+export default function Tags({ tagType, tag }) {
+  return (
+    <>
+      <div className="p-2 m-2 text-white bg-primary border border-black dark:border-white rounded-3xl font-bold">
+        <div className=" flex flex-wrap capitalize">
+          {tagType}: {tag}
         </div>
-      </>
-    );
-  }
-  
+      </div>
+    </>
+  );
+}

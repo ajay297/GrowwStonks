@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TABS from "@/constants/tabs";
+import { TABS } from "@/constants";
 const Tabs = ({ selectedTab }) => {
   return (
     <>
