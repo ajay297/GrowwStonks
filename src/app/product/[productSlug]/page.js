@@ -28,7 +28,7 @@ export default async function Page({ params }) {
           currentPrice={data["05. price"]}
           change={data["10. change percent"]}
           profitloss={
-            parseInt(data["09. change"]) > 0 ? "increase" : "decrease"
+            parseFloat(data["09. change"]) > 0 ? "increase" : "decrease"
           }
         />
 

@@ -19,7 +19,7 @@ export default function ProductDescription({
 }) {
   return (
     <>
-      <div className="mt-2 py-4 dark:bg-cardColor border border-black  rounded-lg">
+      <div className="mt-2 py-4 border border-black dark:border-white rounded-lg">
         <div className="px-6 py-2 ">
           <div className="text-xl font-bold">About {title}</div>
         </div>

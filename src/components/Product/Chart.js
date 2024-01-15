@@ -1,5 +1,4 @@
 import Graph from "./Graph";
-import TimeSelector from "./TimeSelector";
 import { fetchData } from "@/utils";
 
 export default async function Chart({ symbol }) {
@@ -31,7 +30,7 @@ export default async function Chart({ symbol }) {
 
   return (
     <>
-      <div className="border border-black dark:bg-cardColor rounded-lg my-2  px-6 pt-8 py-4">
+      <div className="border border-black dark:border-white rounded-lg my-2  px-6 pt-8 py-4">
         <Graph
           oneDayChartData={oneDayChartData}
           oneYearChartData={oneYearChartData}

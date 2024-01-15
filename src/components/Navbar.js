@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Search from "./Search";
+import ThemeSwitcher from "@/theme/ThemeSwitcher";
 
 const Navbar = () => {
   return (
@@ -15,14 +16,11 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="px-4 py-1 min-w-[50%]">
-            {/* <input
-              type="text"
-              placeholder="Search stocks and etfs"
-              className="border-none rounded-full w-full py-2 px-4 text-black dark:text-white font-semibold focus:outline-none focus:ring-2 focus:ring-growwOrange focus:border-transparent"
-            /> */}
             <Search />
           </div>
-          <div className="pl-2 py-1"></div>
+          <div className="pl-2 py-1">
+            <ThemeSwitcher />
+          </div>
         </div>
       </div>
     </>
