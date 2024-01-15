@@ -28,7 +28,7 @@ export default function Head({
                   </div>
                 )}
               </div>
-              <div>{change}%</div>
+              <div>{change}</div>
             </div>
           </div>
         </div>
